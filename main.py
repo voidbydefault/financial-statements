@@ -1,12 +1,17 @@
 import os
+import tkinter as tk
+from tkinter import filedialog, messagebox
 import pandas as pd
 from yahooquery import Ticker as yq
-import tkinter as tk
-from tkinter import filedialog
-from tkinter import simpledialog
 
 # Get tickers from user input, e.g. ['4300.SR', '4240.SR']
 tickers = ['4300.SR', '4240.SR']
+
+# show a message about tickers
+root = tk.Tk()
+root.geometry("400x200")
+root.withdraw()
+messagebox.showinfo(title="Download notification", message="Reading tickers from main.py\n\n" + "\n".join(tickers))
 
 #################################################
 ## Beyond this point, user inputs not required ##
@@ -19,6 +24,14 @@ transpose = pd.DataFrame.transpose
 root = tk.Tk()
 root.withdraw()
 folder_path = filedialog.askdirectory(title="Select a folder to save the output files")
+
+# check if the user clicked on "Cancel"
+if not folder_path:
+    print("Folder selection canceled by user.")
+    exit() # or sys.exit() if you've imported the sys module
+else:
+    print(f"Selected folder path: {folder_path}")
+    # continue with your script
 
 # Pull data and save to CSV
 for ticker in tickers:

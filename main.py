@@ -6,10 +6,7 @@ from tkinter import filedialog
 from tkinter import simpledialog
 
 # Get tickers from user input, e.g. ['4300.SR', '4240.SR']
-root = tk.Tk()
-root.withdraw()
-tickers_str = simpledialog.askstring(title="Enter Ticker Symbols", prompt="Enter ticker symbols separated by commas:")
-tickers = tickers_str.split(',')
+tickers = ['4300.SR', '4240.SR']
 
 #################################################
 ## Beyond this point, user inputs not required ##

@@ -3,9 +3,13 @@ import pandas as pd
 from yahooquery import Ticker as yq
 import tkinter as tk
 from tkinter import filedialog
+from tkinter import simpledialog
 
-# Add tickers in apostrophes, two are added as examples. Search exact ticker at https://finance.yahoo.com/
-tickers = ['4300.SR', '4240.SR']
+# Get tickers from user input, e.g. ['4300.SR', '4240.SR']
+root = tk.Tk()
+root.withdraw()
+tickers_str = simpledialog.askstring(title="Enter Ticker Symbols", prompt="Enter ticker symbols separated by commas:")
+tickers = tickers_str.split(',')
 
 #################################################
 ## Beyond this point, user inputs not required ##
@@ -17,7 +21,7 @@ transpose = pd.DataFrame.transpose
 # Create GUI window for folder selection
 root = tk.Tk()
 root.withdraw()
-folder_path = filedialog.askdirectory()
+folder_path = filedialog.askdirectory(title="Select a folder to save the output files")
 
 # Pull data and save to CSV
 for ticker in tickers:

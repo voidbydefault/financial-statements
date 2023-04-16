@@ -5,7 +5,11 @@ listed companies.
 
 ### How to use?
 1. You need Python installed on your PC  (use Microsoft Store or any other IDE of choice)
-   and run 'main.py'
+   and use following commands in 'cmd' or 'terminal' to get started:
+   
+   'copy and paste'
+   * pip install -r requirements.txt
+   * python3 main.py
 
 
 2. Enter tickers/symbols in code.country format [e.g., 4300.SR] in 'main.py'

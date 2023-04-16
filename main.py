@@ -7,15 +7,15 @@ from yahooquery import Ticker as yq
 # Get tickers from user input, e.g. ['4300.SR', '4240.SR']
 tickers = ['4300.SR', '4240.SR']
 
+#################################################
+## Beyond this point, user inputs not required ##
+#################################################
+
 # show a message about tickers
 root = tk.Tk()
 root.geometry("400x200")
 root.withdraw()
 messagebox.showinfo(title="Download notification", message="Reading tickers from main.py\n\n" + "\n".join(tickers))
-
-#################################################
-## Beyond this point, user inputs not required ##
-#################################################
 
 # Global variable(s)
 transpose = pd.DataFrame.transpose

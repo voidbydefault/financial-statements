@@ -1,10 +1,12 @@
 import os
 import tkinter as tk
 from tkinter import filedialog, messagebox
+
 import pandas as pd
 from yahooquery import Ticker as yq
 
 # Get tickers from user input, e.g. ['4300.SR', '4240.SR']
+# visit https://finance.yahoo.com/ to find tickers of companies
 tickers = ['4300.SR', '4240.SR']
 
 #################################################
@@ -59,4 +61,9 @@ for ticker in tickers:
     # Close XLS to save changes
     xlwriter.close()
 
+# show exit message about files
+root = tk.Tk()
+root.geometry("400x200")
+root.withdraw()
+messagebox.showinfo(title="Download complete", message="Files downloaded to selected folder.")
 print("Done. Closing.")
